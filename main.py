@@ -1,20 +1,9 @@
-from turtle import home
-import RPi.GPIO as GPIO
 import I2C_LCD_driver
 
 # import visuales
 from screens.home import Home
 
 lcd = I2C_LCD_driver.lcd()
-BOTON_SUBIR = 14
-BOTON_BAJAR = 4
-BOTON_ENTER = 25
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(BOTON_SUBIR, GPIO.IN)
-GPIO.setup(BOTON_BAJAR, GPIO.IN)
-GPIO.setup(BOTON_ENTER, GPIO.IN)
-GPIO.setwarnings(False)
 
 velocidad = 20
 sentido = 1
