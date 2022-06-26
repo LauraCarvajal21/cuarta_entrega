@@ -1,5 +1,9 @@
+from turtle import home
 import RPi.GPIO as GPIO
 import I2C_LCD_driver
+
+# import visuales
+from screens.home import Home
 
 lcd = I2C_LCD_driver.lcd()
 BOTON_SUBIR = 14
@@ -21,9 +25,8 @@ def main():
     menu = 'home'
     while True:
         if menu == 'home':
-            lcd.lcd_display_string("Velocidad      *", 1)
-            lcd.lcd_display_string("Sentido", 2)
-
+           home=Home(lcd) 
+           home.show()        
 
 if __name__ == '__main__':
 
