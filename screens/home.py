@@ -20,8 +20,8 @@ class Home():
 
     def __show_menu(self):
         self.my_lcd.lcd_clear()
-        self.my_lcd.lcd_display_string(self.OPTIONS[0].get('text'),1)
-        self.my_lcd.lcd_display_string(self.OPTIONS[1].get('text'),2)
-        
+        self.my_lcd.lcd_display_string(self.OPTIONS[0].get('text'),1,3)
+        self.my_lcd.lcd_display_string(self.OPTIONS[1].get('text'),2,3)
+        self.my_lcd.lcd_display_string('->',1)
     def show(self):
         self.__show_menu()
