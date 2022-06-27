@@ -18,7 +18,7 @@ class Laps():
         self.PinN2 = 24
         self.PWM = 18
 
-        self.sensor=6
+        self.sensor=12
 
         GPIO.setup(self.BOTON_SUBIR, GPIO.IN)
         GPIO.setup(self.BOTON_BAJAR, GPIO.IN)
@@ -67,8 +67,8 @@ class Laps():
 
                 while self.laps != 0:
                     self.my_lcd.lcd_display_string(f'Quedan: {self.laps}', 1)
-                    if not GPIO.input(self.sensor):
-                        while not GPIO.input(self.sensor):
+                    if GPIO.input(self.sensor):
+                        while GPIO.input(self.sensor):
                             pass
                         print(self.laps)
                     
