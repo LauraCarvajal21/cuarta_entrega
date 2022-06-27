@@ -66,14 +66,25 @@ class Laps():
                     GPIO.output(self.PinN2,False)
 
                 while self.laps != 0:
-                    self.my_lcd.lcd_display_string(f'Quedan: {self.laps}     ', 1)
-                    if GPIO.input(self.sensor):
-                        while GPIO.input(self.sensor):
-                            pass
-                        print(self.laps)
-                    
-                    #time.sleep(1)
-                        self.laps -= 1
+                    if GPIO.input(self.BOTON_ENTER):
+
+                        while GPIO.input(self.BOTON_ENTER):
+                         pass
+
+                        for i in range (11,0,-1):
+                            self.my_lcd.lcd_clear()
+                            self.my_lcd.lcd_display_string(f'Pausa: {i}     ', 1)
+                            time.sleep(1)
+                    else:
+
+                        self.my_lcd.lcd_display_string(f'Quedan: {self.laps}     ', 1)
+                        if GPIO.input(self.sensor):
+                            while GPIO.input(self.sensor):
+                                pass
+                            print(self.laps)
+                        
+                        #time.sleep(1)
+                            self.laps -= 1
 
                 self.is_running = False
         return self.laps
