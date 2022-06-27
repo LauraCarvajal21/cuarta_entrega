@@ -38,11 +38,11 @@ class Home():
                 self.__show_menu(1)
             if GPIO.input(self.BOTON_SUBIR) and self.position != 0:
                 self.position -= 1
-                while GPIO.input(self.BOTON_BAJAR):
+                while GPIO.input(self.BOTON_SUBIR):
                     pass
                 self.__show_menu(0)
             if GPIO.input(self.BOTON_ENTER):
-                while GPIO.input(self.BOTON_BAJAR):
+                while GPIO.input(self.BOTON_ENTER):
                     pass
                 self.is_running = False
         return self.position
