@@ -31,7 +31,7 @@ class Home():
     def show(self):
         self.__show_menu(0)
         while self.is_running:
-            if GPIO.input(self.BOTON_BAJAR) and self.position != len(self.OPTIONS):
+            if GPIO.input(self.BOTON_BAJAR) and self.position != len(self.OPTIONS)-1:
                 self.position += 1
                 while GPIO.input(self.BOTON_BAJAR):
                     pass
