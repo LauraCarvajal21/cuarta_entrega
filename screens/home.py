@@ -30,14 +30,15 @@ class Home():
         self.my_lcd.lcd_display_string('->', bajando+1)
 
     def show(self):
-        self.__show_menu()
-        if GPIO.input(self.BOTON_BAJAR):
-            self.position += 1
-            while GPIO.input(self.BOTON_BAJAR):
-                pass
-            self.__show_menu(1)
-        if GPIO.input(self.BOTON_SUBIR):
-            self.position -= 1
-            while GPIO.input(self.BOTON_BAJAR):
-                pass
-            self.__show_menu(0)
+        self.__show_menu(0)
+        while self.is_running:
+            if GPIO.input(self.BOTON_BAJAR):
+                self.position += 1
+                while GPIO.input(self.BOTON_BAJAR):
+                    pass
+                self.__show_menu(1)
+            if GPIO.input(self.BOTON_SUBIR):
+                self.position -= 1
+                while GPIO.input(self.BOTON_BAJAR):
+                    pass
+                self.__show_menu(0)
