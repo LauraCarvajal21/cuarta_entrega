@@ -8,7 +8,7 @@ class Speed():
         self.velocidad = 100
 
     def __show(self):
-        self.my_lcd.clear()
+        self.my_lcd.lcd_clear()
         self.my_lcd.lcd_display_string(f'Velocidad: {self.velocidad}%', 1)
 
     def show(self):
