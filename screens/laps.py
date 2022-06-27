@@ -56,11 +56,11 @@ class Laps():
 
 
                 if self.direction==0:
-                    GPIO.output(self.IN1,False)
-                    GPIO.output(self.IN2,True)
+                    GPIO.output(self.PinN1,False)
+                    GPIO.output(self.PinN2,True)
                 else:
-                    GPIO.output(self.IN1,True)
-                    GPIO.output(self.IN2,False)
+                    GPIO.output(self.PinN1,True)
+                    GPIO.output(self.PinN2,False)
 
                 while self.laps != 0:
                     self.my_lcd.lcd_display_string(f'Quedan: {self.laps}', 1)
