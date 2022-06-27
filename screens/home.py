@@ -25,7 +25,7 @@ class Home():
                                   bajando:self.position+2-bajando]
 
         self.my_lcd.lcd_display_string(new_option[0], 1, 3)
-        self.my_lcd.lcd_display_string(new_option[2], 1, 3)
+        self.my_lcd.lcd_display_string(new_option[1], 1, 3)
 
         self.my_lcd.lcd_display_string('->', bajando+1)
 
