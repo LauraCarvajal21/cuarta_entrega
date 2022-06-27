@@ -1,6 +1,4 @@
 import time
-
-from matplotlib.pyplot import flag
 import RPi.GPIO as GPIO
 
 
