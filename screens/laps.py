@@ -67,8 +67,8 @@ class Laps():
 
                 while self.laps != 0:
                     self.my_lcd.lcd_display_string(f'Quedan: {self.laps}', 1)
-                    if GPIO.input(self.sensor):
-                        while GPIO.input(self.sensor):
+                    if not GPIO.input(self.sensor):
+                        while not GPIO.input(self.sensor):
                             pass
                         print(self.laps)
                     
