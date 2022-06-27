@@ -8,12 +8,12 @@ from screens.laps import Laps
 
 lcd = I2C_LCD_driver.lcd()
 
-velocidad = 20
-sentido = 1
-vueltas = 0
 
 
 def main():
+    velocidad = 20
+    sentido = 1
+    
     menu = 'home'
     while True:
         if menu == 'home':
