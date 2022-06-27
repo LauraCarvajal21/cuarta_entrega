@@ -21,8 +21,7 @@ class Home():
     def __show_menu(self, bajando):
         self.my_lcd.lcd_clear()
 
-        new_option = self.OPTIONS[self.position -
-                                  bajando:self.position+2-bajando]
+        new_option = self.OPTIONS[self.position - bajando:self.position+1-bajando]
 
         self.my_lcd.lcd_display_string(new_option[0], 1, 3)
         self.my_lcd.lcd_display_string(new_option[1], 1, 3)
@@ -32,12 +31,12 @@ class Home():
     def show(self):
         self.__show_menu(0)
         while self.is_running:
-            if GPIO.input(self.BOTON_BAJAR):
+            if GPIO.input(self.BOTON_BAJAR) and self.position is not len(self.OPTIONS):
                 self.position += 1
                 while GPIO.input(self.BOTON_BAJAR):
                     pass
                 self.__show_menu(1)
-            if GPIO.input(self.BOTON_SUBIR):
+            if GPIO.input(self.BOTON_SUBIR) and self.position is not 0:
                 self.position -= 1
                 while GPIO.input(self.BOTON_BAJAR):
                     pass
