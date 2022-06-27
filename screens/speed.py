@@ -6,7 +6,10 @@ class Speed():
         self.is_running = True
         self.my_lcd = lcd
         self.velocidad = 100
-        
+
+        self.BOTON_SUBIR = 14
+        self.BOTON_BAJAR = 4
+        self.BOTON_ENTER = 25        
         GPIO.setup(self.BOTON_SUBIR, GPIO.IN)
         GPIO.setup(self.BOTON_BAJAR, GPIO.IN)
         GPIO.setup(self.BOTON_ENTER, GPIO.IN)
