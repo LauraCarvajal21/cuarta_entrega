@@ -41,3 +41,8 @@ class Home():
                 while GPIO.input(self.BOTON_BAJAR):
                     pass
                 self.__show_menu(0)
+            if GPIO.input(self.BOTON_ENTER):
+                while GPIO.input(self.BOTON_BAJAR):
+                    pass
+                self.is_running = False
+        return self.position
