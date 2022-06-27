@@ -28,8 +28,8 @@ def main():
             sentido = direction.show()
             menu = 'home'
         elif menu == 2:
-            laps = Laps(lcd)
-            vueltas = laps.show()
+            laps = Laps(lcd, velocidad,sentido)
+            laps.show_and_run()
             menu = 'home'
 
 

@@ -18,7 +18,7 @@ class Speed():
         self.my_lcd.lcd_clear()
         self.my_lcd.lcd_display_string(f'Velocidad: {self.velocidad}%', 1)
 
-    def show(self):
+    def show(self, ):
         self.__show()
         while self.is_running:
             if GPIO.input(self.BOTON_BAJAR) and self.velocidad != 0:
