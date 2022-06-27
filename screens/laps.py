@@ -18,7 +18,7 @@ class Laps():
         self.PinN2 = 24
         self.PWM = 18
 
-        self.sensor=5
+        self.sensor=6
 
         GPIO.setup(self.BOTON_SUBIR, GPIO.IN)
         GPIO.setup(self.BOTON_BAJAR, GPIO.IN)
@@ -70,6 +70,7 @@ class Laps():
                     if GPIO.input(self.sensor):
                         while GPIO.input(self.sensor):
                             pass
+                        print(self.laps)
                     
                     #time.sleep(1)
                         self.laps -= 1
