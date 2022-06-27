@@ -22,7 +22,7 @@ class Home():
         self.my_lcd.lcd_clear()
 
         new_option = self.OPTIONS[self.position - bajando:self.position+2-bajando]
-
+        print(new_option)
         self.my_lcd.lcd_display_string(new_option[0], 1, 3)
         self.my_lcd.lcd_display_string(new_option[1], 2, 3)
 
