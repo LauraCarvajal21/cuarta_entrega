@@ -4,6 +4,7 @@ import I2C_LCD_driver
 from screens.home import Home
 from screens.speed import Speed
 from screens.direction import Direction
+from screens.laps import Laps
 
 lcd = I2C_LCD_driver.lcd()
 
@@ -26,7 +27,10 @@ def main():
             direction=Direction(lcd)
             sentido = direction.show()
             menu = 'home'
-            
+        elif menu == 2:
+            laps = Laps(lcd)
+            vueltas = laps.show()
+            menu = 'home'
 
 
 if __name__ == '__main__':
